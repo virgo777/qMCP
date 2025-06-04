@@ -6,19 +6,12 @@ from fastmcp import FastMCP
 # Create an MCP server
 mcp = FastMCP("calculateQuantMcp", host="0.0.0.0", port=9000)
 
-ts.set_token('d540bc13ad658e16b878e9ad4809b0a0c3e2dcb002ecc5669c6236ea')
+ts.set_token('d540bc13ad69c6236ea')
 pro = ts.pro_api()
 
 def calculate_q_levels(low, high):
     A = low
     B = high
-    # 保守位: A^0.25 * B^0.75
-    conservative = math.pow(A, 0.25) * math.pow(B, 0.75)
-    # 正常位: sqrt(A * B)
-    normal = math.sqrt(A * B)
-    # 极限位: A^0.679 * B^0.321
-    extreme = math.pow(A, 0.679) * math.pow(B, 0.321)
-
     return {
         "保守位": f"{conservative:.2f}",
         "正常位": f"{normal:.2f}",
