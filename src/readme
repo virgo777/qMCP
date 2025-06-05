@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "qMCP": {
+      "command": "uvx",
+      "args": [
+        "analys_stock_tool",    #这里是pip 安装的目录
+        "--symbol=000858.SZ"
+      ]
+    }
+  }
+}
+
+
+有一个参考示例：https://mcp.so/server/time/modelcontextprotocol?tab=content
